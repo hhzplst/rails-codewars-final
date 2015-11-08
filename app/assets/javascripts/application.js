@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require handlebars.runtime
-//= require introjs
 //= require_tree ./templates
 //= require turbolinks
 //= require bootstrap
