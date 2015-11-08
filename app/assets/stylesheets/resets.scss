@@ -1,0 +1,24 @@
+// Place all the styles related to the resets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#signupForm{
+  color:#C9C9C9;
+  padding: 40px;
+  background-color:rgba(0, 0, 0, 0.5);
+  margin-top: 130px;
+}
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
+.body-background {  
+  background-image: url(/images/signup_bg.jpg);
+  background-size: 2500px 1200px;
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+
+  animation: animatedBackground 10s linear infinite;
+}

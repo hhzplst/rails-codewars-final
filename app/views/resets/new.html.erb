@@ -1,0 +1,12 @@
+<div class='col-md-4 col-md-offset-2'>
+  <div class='jumbotron' id='signupForm'>
+    <%= form_tag resets_path do%>
+    <h3>Enter Email To Reset Password</h3><br>  
+    <div class='form-group'>
+    <%= label_tag :email %> 
+    <%= text_field_tag :email, params[:email], autofocus:true, class: 'form-control' %>
+    </div><br>
+    <%= submit_tag "Reset Password", class: 'btn btn-default' %> <br><br>
+    <% end %>
+  </div>
+</div>
