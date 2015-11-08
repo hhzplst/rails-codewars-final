@@ -63,6 +63,8 @@ GEM
     excon (0.45.4)
     execjs (2.6.0)
     ffi (1.9.10)
+    font-awesome-sass (4.3.2.1)
+      sass (~> 3.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     handlebars_assets (0.19.1)
@@ -174,6 +176,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
+  font-awesome-sass
   handlebars_assets
   jbuilder (~> 2.0)
   jquery-rails

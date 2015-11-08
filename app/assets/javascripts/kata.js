@@ -25,7 +25,7 @@ $(function(){
     });
   });
   $("body").on("click", "#codesubmit", function(e){
-    $("#error").empty();
+    $("#message").empty();
     var data = {answer: editor.getValue()};
     $.ajax({
       type: "POST",
@@ -33,7 +33,15 @@ $(function(){
       dataType: 'json',
       data: data
     }).done(function(response){
-
+      if(response.errors){
+        $(HandlebarsTemplates['kata/errors'](response))
+        .appendTo("#message").hide().slideDown("slow", function(){
+        });
+      }
+      //ending the if statement
+      else{
+        //review the code and think about the next step
+      }
     });
   });
   $("body").on("click", "#cleanup", function(e){

@@ -25290,3 +25290,1269 @@ Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb062
 
 
 Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:07:16 -0800
+
+
+Started GET "/login" for ::1 at 2015-11-08 15:22:41 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4311ms (Views: 4309.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-08 15:22:45 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 200ms (Views: 199.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-08 15:22:45 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 263ms (Views: 261.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/templates/kata/errors.self-d450a52230121dc80e2b5237fe8d003b0d4831fafa11d85577384bf041e0a5eb.js?body=1" for ::1 at 2015-11-08 15:22:46 -0800
+
+
+Started GET "/assets/kata.self-d3957831f5687c19d1b9dbaa2b625c538d636fc60f7cbfd79cff6555f0669744.js?body=1" for ::1 at 2015-11-08 15:22:46 -0800
+
+
+Started GET "/assets/templates/kata/corrects.self-2eb4a774178240c8c27da6d9af443abbde9a810515373ba2d61dfe3a2fb4086c.js?body=1" for ::1 at 2015-11-08 15:22:46 -0800
+
+
+Started GET "/assets/kata.self-f77bb06f85cfd711a2c288ea5d0a37ce052a9b194f970b07cf25abdfc7945747.css?body=1" for ::1 at 2015-11-08 15:22:46 -0800
+
+
+Started POST "/login" for ::1 at 2015-11-08 15:22:49 -0800
+Processing by UsersController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5cP9HM7iPFcA3uE3LQOtsL7Oq0eq5lUi9OY+D+6zP2AMAkis03k2iNneiYYTlsr5FuGTIWze64xwDWptr79mhA==", "username"=>"test", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["username", "test"]]
+Redirected to http://localhost:3000/coding-challenges
+Completed 302 Found in 128ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:22:49 -0800
+Processing by KataController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 174ms (Views: 168.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:22:51 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=1.734723
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.1ms)[0m  INSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["solutionId", "563fd94cb133ddf0ef00006c"], ["projectId", "563fd94cb133ddf0ef00006a"], ["created_at", "2015-11-08 23:22:52.874743"], ["updated_at", "2015-11-08 23:22:52.874743"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 13], ["katum_id", 225], ["created_at", "2015-11-08 23:22:52.941349"], ["updated_at", "2015-11-08 23:22:52.941349"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Completed 200 OK in 1820ms (Views: 0.3ms | ActiveRecord: 17.4ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:22:57 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def sillycase(silly)\n  #your code here\nend"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mKatum Load (1.3ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fd94cb133ddf0ef00006a/solutions/563fd94cb133ddf0ef00006c/attempt?code=def%20sillycase%28silly%29%0A%20%20%23your%20code%20here%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.109581
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fd94cb133ddf0ef00006a/solutions/563fd94cb133ddf0ef00006c/attempt?code=def%20sillycase%28silly%29%0A%20%20%23your%20code%20here%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.158244
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/43o-zRoe response_code=200 return_code=ok total_time=0.122788
+Completed 200 OK in 5303ms (Views: 0.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:28:25 -0800
+Processing by KataController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2603ms (Views: 2599.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/kata.self-f1c90bc3b2603f46da78b32dbee32c4022b254c870da2a39fcf32cc884416a81.css?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/users.self-0134feb993ff859562a0010b44259d240dad8c34f2546e547d7c2d12867b13ef.css?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/application.self-4a986a7a019e8caf4e64debf8965a143a0b2c06470d8e1c62c1f4f5a4bb53049.css?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/templates/kata/corrects.self-074231ab3080023d9d8a81c5bb246fe5373beb488729a622e651223222e253ba.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-f5b8b78b3bf660389be3c699cb1ab1db8d546ed87146c29d6f6d48c929fec1c8.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/kata.self-d3957831f5687c19d1b9dbaa2b625c538d636fc60f7cbfd79cff6555f0669744.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:28:27 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:28:29 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=1.190461
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["solutionId", "563fd94cb133ddf0ef00006c"], ["projectId", "563fd94cb133ddf0ef00006a"], ["created_at", "2015-11-08 23:28:30.623309"], ["updated_at", "2015-11-08 23:28:30.623309"]]
+  [1m[35m (8.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 13], ["katum_id", 226], ["created_at", "2015-11-08 23:28:30.638936"], ["updated_at", "2015-11-08 23:28:30.638936"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 1217ms (Views: 0.3ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:28:34 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def sillycase(silly)\n  #your code here\nend"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mKatum Load (0.7ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fd94cb133ddf0ef00006a/solutions/563fd94cb133ddf0ef00006c/attempt?code=def%20sillycase%28silly%29%0A%20%20%23your%20code%20here%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.166763
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fd94cb133ddf0ef00006a/solutions/563fd94cb133ddf0ef00006c/attempt?code=def%20sillycase%28silly%29%0A%20%20%23your%20code%20here%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.116732
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/nbx34ScK response_code=200 return_code=ok total_time=0.133533
+Completed 200 OK in 5301ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-11-08 15:28:40 -0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff2"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (97.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (60.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (146.3ms)
+
+
+Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for ::1 at 2015-11-08 15:28:40 -0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (83.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (125.6ms)
+
+
+Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for ::1 at 2015-11-08 15:28:40 -0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (73.0ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (47.0ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (96.3ms)
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:29:43 -0800
+Processing by KataController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 440ms (Views: 437.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/templates/kata/errors.self-8c9d5108bacc7741773a4fc15584929642c6ec9a8a04c5ea23fe8235bff6cff6.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/kata.self-f1c90bc3b2603f46da78b32dbee32c4022b254c870da2a39fcf32cc884416a81.css?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/users.self-0134feb993ff859562a0010b44259d240dad8c34f2546e547d7c2d12867b13ef.css?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/application.self-4a986a7a019e8caf4e64debf8965a143a0b2c06470d8e1c62c1f4f5a4bb53049.css?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/templates/kata/corrects.self-074231ab3080023d9d8a81c5bb246fe5373beb488729a622e651223222e253ba.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/kata.self-d3957831f5687c19d1b9dbaa2b625c538d636fc60f7cbfd79cff6555f0669744.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:29:43 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:29:44 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=0.741628
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["solutionId", "563fd94cb133ddf0ef00006c"], ["projectId", "563fd94cb133ddf0ef00006a"], ["created_at", "2015-11-08 23:29:45.726297"], ["updated_at", "2015-11-08 23:29:45.726297"]]
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 13], ["katum_id", 227], ["created_at", "2015-11-08 23:29:45.742267"], ["updated_at", "2015-11-08 23:29:45.742267"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 200 OK in 768ms (Views: 0.4ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:29:50 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def sillycase(silly)\n  #your code here\nend"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mKatum Load (0.6ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fd94cb133ddf0ef00006a/solutions/563fd94cb133ddf0ef00006c/attempt?code=def%20sillycase%28silly%29%0A%20%20%23your%20code%20here%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.112631
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fd94cb133ddf0ef00006a/solutions/563fd94cb133ddf0ef00006c/attempt?code=def%20sillycase%28silly%29%0A%20%20%23your%20code%20here%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.142118
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/RGdd5u2L response_code=200 return_code=ok total_time=0.128584
+Completed 200 OK in 5270ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-11-08 15:29:55 -0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff2"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (60.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (129.4ms)
+
+
+Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for ::1 at 2015-11-08 15:29:56 -0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (88.0ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (57.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (126.0ms)
+
+
+Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for ::1 at 2015-11-08 15:29:56 -0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (76.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (91.8ms)
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:35:23 -0800
+Processing by KataController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 849ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (File to import not found or unreadable: font-awesome-sprockets.
+Load paths:
+  /Users/hhz_plst/Desktop/rails-codewars-final/app/assets/images
+  /Users/hhz_plst/Desktop/rails-codewars-final/app/assets/javascripts
+  /Users/hhz_plst/Desktop/rails-codewars-final/app/assets/stylesheets
+  /Users/hhz_plst/Desktop/rails-codewars-final/vendor/assets/javascripts
+  /Users/hhz_plst/Desktop/rails-codewars-final/vendor/assets/stylesheets
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/handlebars_assets-0.19.1/vendor/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/jquery-rails-4.0.5/vendor/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/coffee-rails-4.1.0/lib/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/stylesheets
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/fonts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/images
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/stylesheets):
+    2: <html>
+    3: <head>
+    4:   <title>RailsCodewars</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: 
+  app/assets/stylesheets/application.css.scss:18
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2354409833950570266_70247330674580'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (50.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (115.8ms)
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:36:05 -0800
+Processing by KataController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 714ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (File to import not found or unreadable: font-awesome.
+Load paths:
+  /Users/hhz_plst/Desktop/rails-codewars-final/app/assets/images
+  /Users/hhz_plst/Desktop/rails-codewars-final/app/assets/javascripts
+  /Users/hhz_plst/Desktop/rails-codewars-final/app/assets/stylesheets
+  /Users/hhz_plst/Desktop/rails-codewars-final/vendor/assets/javascripts
+  /Users/hhz_plst/Desktop/rails-codewars-final/vendor/assets/stylesheets
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/handlebars_assets-0.19.1/vendor/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/jquery-rails-4.0.5/vendor/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/coffee-rails-4.1.0/lib/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/stylesheets
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/javascripts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/fonts
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/images
+  /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/stylesheets):
+    2: <html>
+    3: <head>
+    4:   <title>RailsCodewars</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: 
+  app/assets/stylesheets/application.css.scss:18
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2354409833950570266_70247330674580'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (94.4ms)
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:37:57 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by KataController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 5080ms (Views: 5026.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/users.self-0327d494336f4d2599001adefe47eb142f8128ad8c1b36ce70d81ceaf73e5e37.css?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/application.self-fa6ec38142ec256659e8f2afdd8cbbf32906a3172da2488a4900e3b6b466a33d.css?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-0933600c4297788b2fc618e56002f73a2b94f633165152df6f243d5beaf0832f.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/kata.self-f1c90bc3b2603f46da78b32dbee32c4022b254c870da2a39fcf32cc884416a81.css?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/templates/kata/corrects.self-074231ab3080023d9d8a81c5bb246fe5373beb488729a622e651223222e253ba.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/kata.self-d3957831f5687c19d1b9dbaa2b625c538d636fc60f7cbfd79cff6555f0669744.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:38:03 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:38:04 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=1.280684
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["solutionId", "563fdcded96c25ee4b0000f9"], ["projectId", "563fdcded96c25ee4b0000f7"], ["created_at", "2015-11-08 23:38:06.195831"], ["updated_at", "2015-11-08 23:38:06.195831"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 13], ["katum_id", 228], ["created_at", "2015-11-08 23:38:06.251980"], ["updated_at", "2015-11-08 23:38:06.251980"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 1372ms (Views: 0.5ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:38:12 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def pattern(n)\n  # Happy Coding ^_^\nend"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mKatum Load (1.4ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.114413
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.11271799999999998
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/vSZDDvyN response_code=200 return_code=ok total_time=0.117306
+Completed 200 OK in 5268ms (Views: 0.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2" for ::1 at 2015-11-08 15:38:18 -0800
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:38:46 -0800
+Processing by KataController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 531ms (Views: 529.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/kata.self-f1c90bc3b2603f46da78b32dbee32c4022b254c870da2a39fcf32cc884416a81.css?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/application.self-fa6ec38142ec256659e8f2afdd8cbbf32906a3172da2488a4900e3b6b466a33d.css?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/users.self-0327d494336f4d2599001adefe47eb142f8128ad8c1b36ce70d81ceaf73e5e37.css?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-d6bf76ade0eb027f9badddf21439b21620168b1a26a7ff4615ced3f656aceaca.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/templates/kata/corrects.self-074231ab3080023d9d8a81c5bb246fe5373beb488729a622e651223222e253ba.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/kata.self-d3957831f5687c19d1b9dbaa2b625c538d636fc60f7cbfd79cff6555f0669744.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:38:47 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:38:48 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=0.275561
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["solutionId", "563fdcded96c25ee4b0000f9"], ["projectId", "563fdcded96c25ee4b0000f7"], ["created_at", "2015-11-08 23:38:48.852058"], ["updated_at", "2015-11-08 23:38:48.852058"]]
+  [1m[36m (8.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 13], ["katum_id", 229], ["created_at", "2015-11-08 23:38:48.866350"], ["updated_at", "2015-11-08 23:38:48.866350"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 200 OK in 299ms (Views: 0.5ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:38:51 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def pattern(n)\n  # Happy Coding ^_^\nend"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mKatum Load (1.1ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.13189099999999998
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.122107
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/PtTgWbzX response_code=200 return_code=ok total_time=0.14127
+Completed 200 OK in 5275ms (Views: 0.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2" for ::1 at 2015-11-08 15:38:57 -0800
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:41:01 -0800
+Processing by KataController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 371ms (Views: 369.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/templates/kata/corrects.self-443b761cc9d5f7be3f602e6e9b18d4c46c20a64ecb2125fe4d5bec59afd2ea02.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/kata.self-f1c90bc3b2603f46da78b32dbee32c4022b254c870da2a39fcf32cc884416a81.css?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/users.self-0327d494336f4d2599001adefe47eb142f8128ad8c1b36ce70d81ceaf73e5e37.css?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/kata.self-3a9bcb76a488d57639400a9b5d199cfdef9674ff706614374c0b312dc3c28cc8.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/application.self-fa6ec38142ec256659e8f2afdd8cbbf32906a3172da2488a4900e3b6b466a33d.css?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-d6bf76ade0eb027f9badddf21439b21620168b1a26a7ff4615ced3f656aceaca.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:41:01 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:41:02 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:41:02 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:41:03 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=0.650137
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["solutionId", "563fdcded96c25ee4b0000f9"], ["projectId", "563fdcded96c25ee4b0000f7"], ["created_at", "2015-11-08 23:41:04.299822"], ["updated_at", "2015-11-08 23:41:04.299822"]]
+  [1m[35m (8.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 13], ["katum_id", 230], ["created_at", "2015-11-08 23:41:04.315649"], ["updated_at", "2015-11-08 23:41:04.315649"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 678ms (Views: 0.3ms | ActiveRecord: 12.4ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:41:07 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def pattern(n)\n  # Happy Coding ^_^\nend"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mKatum Load (0.9ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.161366
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.119493
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/iVg4s4np response_code=200 return_code=ok total_time=0.103637
+Completed 200 OK in 5303ms (Views: 1.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2" for ::1 at 2015-11-08 15:41:12 -0800
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:41:50 -0800
+Processing by KataController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 419ms (Views: 417.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/templates/kata/corrects.self-731b819098b8285ac21520f91c355e47dd85291c7a252accdd84317d1a236d58.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/users.self-0327d494336f4d2599001adefe47eb142f8128ad8c1b36ce70d81ceaf73e5e37.css?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/kata.self-f1c90bc3b2603f46da78b32dbee32c4022b254c870da2a39fcf32cc884416a81.css?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/application.self-fa6ec38142ec256659e8f2afdd8cbbf32906a3172da2488a4900e3b6b466a33d.css?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-d6bf76ade0eb027f9badddf21439b21620168b1a26a7ff4615ced3f656aceaca.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/kata.self-3a9bcb76a488d57639400a9b5d199cfdef9674ff706614374c0b312dc3c28cc8.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:41:51 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:41:52 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=0.714144
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["solutionId", "563fdcded96c25ee4b0000f9"], ["projectId", "563fdcded96c25ee4b0000f7"], ["created_at", "2015-11-08 23:41:53.519030"], ["updated_at", "2015-11-08 23:41:53.519030"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 13], ["katum_id", 231], ["created_at", "2015-11-08 23:41:53.534186"], ["updated_at", "2015-11-08 23:41:53.534186"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 200 OK in 738ms (Views: 0.5ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:41:58 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def pattern(n)\n  # Happy Coding ^_^\nend"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mKatum Load (0.9ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.195232
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.102731
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/UpG2cacR response_code=200 return_code=ok total_time=1.944396
+Completed 200 OK in 5315ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2" for ::1 at 2015-11-08 15:42:03 -0800
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:42:51 -0800
+Processing by KataController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2561ms (Views: 2559.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/kata.self-588f78c9be93486081da92baf428fb6b54d2a255b673cbedbce0a7664205c34e.css?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/application.self-fa6ec38142ec256659e8f2afdd8cbbf32906a3172da2488a4900e3b6b466a33d.css?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/users.self-0327d494336f4d2599001adefe47eb142f8128ad8c1b36ce70d81ceaf73e5e37.css?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/templates/kata/corrects.self-731b819098b8285ac21520f91c355e47dd85291c7a252accdd84317d1a236d58.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-d6bf76ade0eb027f9badddf21439b21620168b1a26a7ff4615ced3f656aceaca.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/kata.self-3a9bcb76a488d57639400a9b5d199cfdef9674ff706614374c0b312dc3c28cc8.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:42:54 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:42:55 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=0.47038199999999997
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["solutionId", "563fdcded96c25ee4b0000f9"], ["projectId", "563fdcded96c25ee4b0000f7"], ["created_at", "2015-11-08 23:42:56.318559"], ["updated_at", "2015-11-08 23:42:56.318559"]]
+  [1m[35m (8.6ms)[0m  COMMIT
+  [1m[36m (57.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 13], ["katum_id", 232], ["created_at", "2015-11-08 23:42:56.390267"], ["updated_at", "2015-11-08 23:42:56.390267"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 549ms (Views: 0.3ms | ActiveRecord: 68.6ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:43:00 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def pattern(n)\n  # Happy Coding ^_^\nend"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mKatum Load (1.1ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.180647
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.13501700000000005
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/eCPmg7Jn response_code=200 return_code=ok total_time=0.107782
+Completed 200 OK in 5333ms (Views: 0.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2" for ::1 at 2015-11-08 15:43:06 -0800
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:43:31 -0800
+Processing by KataController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2286ms (Views: 2284.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/kata.self-305a0512e08cc84f4f8c9d911b8bab4c6c0c29c905c9aa560d0c9eb952b9178b.css?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/users.self-0327d494336f4d2599001adefe47eb142f8128ad8c1b36ce70d81ceaf73e5e37.css?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/application.self-fa6ec38142ec256659e8f2afdd8cbbf32906a3172da2488a4900e3b6b466a33d.css?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/templates/kata/corrects.self-731b819098b8285ac21520f91c355e47dd85291c7a252accdd84317d1a236d58.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-d6bf76ade0eb027f9badddf21439b21620168b1a26a7ff4615ced3f656aceaca.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/kata.self-3a9bcb76a488d57639400a9b5d199cfdef9674ff706614374c0b312dc3c28cc8.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:43:34 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:43:35 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=0.240223
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["solutionId", "563fdcded96c25ee4b0000f9"], ["projectId", "563fdcded96c25ee4b0000f7"], ["created_at", "2015-11-08 23:43:35.631518"], ["updated_at", "2015-11-08 23:43:35.631518"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 13], ["katum_id", 233], ["created_at", "2015-11-08 23:43:35.637027"], ["updated_at", "2015-11-08 23:43:35.637027"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 200 OK in 252ms (Views: 0.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:43:40 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def pattern(n)\n  # Happy Coding ^_^\nend"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mKatum Load (1.6ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.122826
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.196777
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/qBgpBcTA response_code=200 return_code=ok total_time=0.103738
+Completed 200 OK in 5336ms (Views: 0.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2" for ::1 at 2015-11-08 15:43:45 -0800
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:44:13 -0800
+Processing by KataController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 415ms (Views: 413.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/templates/kata/corrects.self-2724c94496cae8e245192634d304f8613d9d9792684ce1b24cb72556a7587754.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/kata.self-305a0512e08cc84f4f8c9d911b8bab4c6c0c29c905c9aa560d0c9eb952b9178b.css?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/users.self-0327d494336f4d2599001adefe47eb142f8128ad8c1b36ce70d81ceaf73e5e37.css?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/application.self-fa6ec38142ec256659e8f2afdd8cbbf32906a3172da2488a4900e3b6b466a33d.css?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-d6bf76ade0eb027f9badddf21439b21620168b1a26a7ff4615ced3f656aceaca.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/kata.self-3a9bcb76a488d57639400a9b5d199cfdef9674ff706614374c0b312dc3c28cc8.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:44:13 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:44:15 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=0.583828
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["solutionId", "563fdcded96c25ee4b0000f9"], ["projectId", "563fdcded96c25ee4b0000f7"], ["created_at", "2015-11-08 23:44:16.191540"], ["updated_at", "2015-11-08 23:44:16.191540"]]
+  [1m[35m (8.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 13], ["katum_id", 234], ["created_at", "2015-11-08 23:44:16.206304"], ["updated_at", "2015-11-08 23:44:16.206304"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 608ms (Views: 0.6ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:44:19 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def pattern(n)\n  # Happy Coding ^_^\nend"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mKatum Load (0.6ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.142053
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.123434
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/9qykYvzS response_code=200 return_code=ok total_time=0.111691
+Completed 200 OK in 5287ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2" for ::1 at 2015-11-08 15:44:24 -0800
+
+
+Started GET "/coding-challenges" for ::1 at 2015-11-08 15:44:48 -0800
+Processing by KataController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered kata/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 214ms (Views: 212.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/kata.self-305a0512e08cc84f4f8c9d911b8bab4c6c0c29c905c9aa560d0c9eb952b9178b.css?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/users.self-0327d494336f4d2599001adefe47eb142f8128ad8c1b36ce70d81ceaf73e5e37.css?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/application.self-fa6ec38142ec256659e8f2afdd8cbbf32906a3172da2488a4900e3b6b466a33d.css?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/templates/kata/corrects.self-2724c94496cae8e245192634d304f8613d9d9792684ce1b24cb72556a7587754.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-d6bf76ade0eb027f9badddf21439b21620168b1a26a7ff4615ced3f656aceaca.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/kata.self-d3957831f5687c19d1b9dbaa2b625c538d636fc60f7cbfd79cff6555f0669744.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-08 15:44:49 -0800
+
+
+Started POST "/coding-challenges" for ::1 at 2015-11-08 15:44:50 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"ruby"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/ruby/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=0.304505
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["solutionId", "563fdcded96c25ee4b0000f9"], ["projectId", "563fdcded96c25ee4b0000f7"], ["created_at", "2015-11-08 23:44:50.752453"], ["updated_at", "2015-11-08 23:44:50.752453"]]
+  [1m[36m (7.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 13], ["katum_id", 235], ["created_at", "2015-11-08 23:44:50.765006"], ["updated_at", "2015-11-08 23:44:50.765006"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 200 OK in 324ms (Views: 0.3ms | ActiveRecord: 9.7ms)
+
+
+Started POST "/submit-answer" for ::1 at 2015-11-08 15:44:53 -0800
+Processing by KataController#submit as JSON
+  Parameters: {"answer"=>"def pattern(n)\n  # Happy Coding ^_^\nend"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mKatum Load (0.4ms)[0m  SELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1  [["user_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "kata".* FROM "kata" INNER JOIN "socials" ON "kata"."id" = "socials"."katum_id" WHERE "socials"."user_id" = $1  ORDER BY "kata"."id" DESC LIMIT 1[0m  [["user_id", 13]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.11868
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/projects/563fdcded96c25ee4b0000f7/solutions/563fdcded96c25ee4b0000f9/attempt?code=def%20pattern%28n%29%0A%20%20%23%20Happy%20Coding%20%5E_%5E%0Aend&output_format=raw response_code=200 return_code=ok total_time=0.127089
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/deferred/WZetzyEB response_code=200 return_code=ok total_time=0.111776
+Completed 200 OK in 5266ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2" for ::1 at 2015-11-08 15:44:59 -0800
