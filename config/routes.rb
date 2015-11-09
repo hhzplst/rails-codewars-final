@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   get '/coding-challenges', to:"kata#index"
 
+  get '/game-plan', to:"kata#game_plan"
+
+  get '/account-info', to:"user#account_info"
+
   post '/coding-challenges', to:"kata#create"
 
   post '/submit-answer', to:"kata#submit"
@@ -19,4 +23,5 @@ Rails.application.routes.draw do
   delete '/logout', to: "users#logout", as:"logout"
 
   resources :resets, only: [:new, :edit, :create, :update]
+
 end

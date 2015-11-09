@@ -1,0 +1,9 @@
+<div class="gamePlan col-md-8 col-md-offset-2">
+  <h1 style="color: #f9423a">Game Plan</h1><br><br>
+  <h4>There are 8 levels, 8 being the highest, you are going to start with 1.</h4>
+  <h4>There are 5 questions for each level. After successfully complete 5 challenges for each level, you are going to be bumped up to the next one.</h4>
+  <h4>You can skip questions if you get stuck. If you skip 3 questions for one level, you are going to be down-graded by one level.</h4>
+  <h4>You can try submitting your answer as many times as you want, there's no limit in that.</h4>
+  <h4>Check your level and the number of completed challenges anytime in <%= link_to "Account Information", account_info_path %></h4><br><br>
+  <%= button_to "Got it, now take me to the real stuff!", coding_challenges_path, method: :get, class:"btn btn-lg btn-success center-block" %>
+</div>

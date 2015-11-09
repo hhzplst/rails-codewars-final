@@ -32,3 +32,21 @@
   color:#7CCD7C;
   font-size: 21px;
 }
+
+.gamePlan{
+  height: 600px;
+  padding:40px;
+  margin-top:50px;
+  background-color:rgba(0, 0, 0, 0.5);
+  color:#C9C9C9;
+  h4:nth-child(odd){
+    color: #eaf1b8;
+    padding-bottom:15px;
+    font-size: 20px;
+  } 
+  h4:nth-child(even){
+    color: #ffb90f;
+    padding-bottom:15px;
+    font-size: 20px;
+  }
+}

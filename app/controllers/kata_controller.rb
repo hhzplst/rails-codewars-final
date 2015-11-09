@@ -72,6 +72,10 @@ class KataController < ApplicationController
       @result_deferred
   end
 
+  def game_plan
+    
+  end
+
   private
 
   def kata_params

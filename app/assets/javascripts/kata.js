@@ -40,7 +40,9 @@ $(function(){
       }
       //ending the if statement
       else{
-        //review the code and think about the next step
+        //increase the completed question for the current user
+        //check if the users's level is going to increase
+
       }
     });
   });
