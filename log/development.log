@@ -30504,3 +30504,592 @@ Processing by KataController#index as HTML
   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
   Rendered kata/index.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 215ms (Views: 212.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-12-16 12:32:57 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (5.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#signup as HTML
+  Rendered users/signup.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 1098ms (Views: 1045.0ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/assets/resets.self-846cbf89175edde9d7cbc04b0464c5182b57716d1e1b73dc9ffe79e2d6909452.css?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/kata.self-f0f0a0bfdfe2c913777bfa2ae9a35dd15e316f638ab9c7585436476283939c16.css?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/application.self-fa6ec38142ec256659e8f2afdd8cbbf32906a3172da2488a4900e3b6b466a33d.css?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/users.self-0327d494336f4d2599001adefe47eb142f8128ad8c1b36ce70d81ceaf73e5e37.css?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/handlebars.runtime.self-ed989a562c1ed6fba7ea21ede81be837d85a7b5da40f318cd28e0fe249e5320b.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/templates/kata/ace.self-bb1bab35dd5e8d0625abdad3d6f491bfd8c4408845bf3f1c5386ce71de9f5873.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/templates/kata/corrects.self-2724c94496cae8e245192634d304f8613d9d9792684ce1b24cb72556a7587754.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/templates/kata/errors.self-d6bf76ade0eb027f9badddf21439b21620168b1a26a7ff4615ced3f656aceaca.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/kata.self-b907f417b1de994e85c1cbf9fa8d0dbfe51448bbf6e3954ac3cb57305e9b9364.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/resets.self-2abc19c26ebbf605174fbef79b9fbc2861869c60e15935e80dffcad48cabad9f.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2017-12-16 12:32:59 -0800
+
+
+Started GET "/coding-challenges" for ::1 at 2017-12-16 12:33:02 -0800
+Processing by KataController#index as HTML
+  Rendered kata/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 199ms (Views: 197.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/coding-challenges" for ::1 at 2017-12-16 12:33:42 -0800
+Processing by KataController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F3Z3GAwDYhaThbtjtRMJayuziXRYipc1fHviKiExuDSdsWmyMexcfspGFpYXXPPRsTAOZdsdwxS8IoS8vENwIQ==", "commit"=>"javascript"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `level' for nil:NilClass):
+  app/controllers/kata_controller.rb:11:in `create'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (140.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (119.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (294.8ms)
+
+
+Started POST "/coding-challenges" for ::1 at 2017-12-16 12:39:51 -0800
+Processing by KataController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F3Z3GAwDYhaThbtjtRMJayuziXRYipc1fHviKiExuDSdsWmyMexcfspGFpYXXPPRsTAOZdsdwxS8IoS8vENwIQ==", "commit"=>"javascript"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `level' for nil:NilClass):
+  app/controllers/kata_controller.rb:11:in `create'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (120.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (106.1ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (241.4ms)
+
+
+Started GET "/" for ::1 at 2017-12-16 12:45:25 -0800
+Processing by UsersController#signup as HTML
+  Rendered users/signup.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 250ms (Views: 248.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for ::1 at 2017-12-16 12:45:49 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OP9XsXJXbpgLtEd7pSRQNMglOoPBVZIFCnJDhd5tuReyOEkbT7hQ8FJ36o4Ha6qOUqa9kkLCxiTKKyUTQx9xAg==", "user"=>{"username"=>"Ivchang", "email"=>"ivycwq@icloud.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (1.8ms)[0m  BEGIN
+  [1m[36mUser Exists (8.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Ivchang' LIMIT 1[0m
+  [1m[35mSQL (10.8ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "Ivchang"], ["password_digest", "$2a$10$OIsU2cu1GKW5NtLNme4PE.IP34G/k/lVYdQ85e2W81ZaOqKDFmh52"], ["email", "ivycwq@icloud.com"], ["created_at", "2017-12-16 20:45:49.533500"], ["updated_at", "2017-12-16 20:45:49.533500"]]
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Ivchang' AND "users"."id" != 14) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/game-plan
+Completed 302 Found in 239ms (ActiveRecord: 27.8ms)
+
+
+Started GET "/game-plan" for ::1 at 2017-12-16 12:45:49 -0800
+Processing by KataController#game_plan as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  Rendered kata/game_plan.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 189ms (Views: 173.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/coding-challenges" for ::1 at 2017-12-16 12:45:53 -0800
+Processing by KataController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+  Rendered kata/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 194ms (Views: 191.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/coding-challenges" for ::1 at 2017-12-16 12:45:55 -0800
+Processing by KataController#create as JSON
+  Parameters: {"language"=>"javascript"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges/javascript/train?stratgey=kyu_8_workout response_code=200 return_code=ok total_time=5.851914
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.1ms)[0m  [1mINSERT INTO "kata" ("solutionId", "projectId", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["solutionId", "5a3586098f27f2cf810000a0"], ["projectId", "563a9253a4812caecc00007d"], ["created_at", "2017-12-16 20:46:01.871155"], ["updated_at", "2017-12-16 20:46:01.871155"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (14.2ms)[0m  INSERT INTO "socials" ("user_id", "katum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 14], ["katum_id", 237], ["created_at", "2017-12-16 20:46:01.927951"], ["updated_at", "2017-12-16 20:46:01.927951"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 5959ms (Views: 0.5ms | ActiveRecord: 27.8ms)
+
+
+Started GET "/coding-challenges" for ::1 at 2017-12-16 12:46:10 -0800
+Processing by KataController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+  Rendered kata/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 172ms (Views: 169.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/coding-challenges" for ::1 at 2017-12-16 12:46:12 -0800
+Processing by KataController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yY5HfkLx0tAq0UNP4+rzjHWJfXtgMnJxk8yi6Q2LvftDSVnUfx7suHMS7rpBpQk27wr6auOlJlBTlcR/kPl17g==", "commit"=>"ruby"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+ETHON: performed EASY effective_url=https://www.codewars.com/api/v1/code-challenges//train?stratgey=kyu_8_workout response_code=500 return_code=ok total_time=0.195014
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.5ms)
+
+JSON::ParserError (757: unexpected token at '<!DOCTYPE html><html><head><title>Codewars</title><meta content="authenticity_token" name="csrf-param" />
+<meta content="Bder2ZZ70LaNGhc0O0/2wUXZOU3z8Hi0p0+txybR7Eo=" name="csrf-token" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" /><meta property="og:title" /><meta content="website" property="og:type" /><meta content="Codewars" property="og:site_name" /><meta content="http://www.codewars.com" property="og:url" /><meta content="http://www.codewars.com/assets/logos/logo-square-paper-bg.jpg" property="og:image" /><meta content="https://www.codewars.com/assets/logos/logo-square-paper-bg.jpg" property="og:image:secure_url" /><meta content="Codewars is where developers achieve code mastery through challenge. Train on kata in the dojo and reach your highest potential." property="og:description" /><meta content="652826666" property="fb:admins" /><meta content="110951985735625" property="fb:app_id" /><meta content="Codewars is where developers achieve code mastery through challenge. Train on kata in the dojo and reach your highest potential." name="description" /><meta content="codewars, code kata, kata, code gym, coding, code practice, ruby, javascript, coffeescript, web development, software development, dojo" name="keywords" /><meta content="EMv3k6eCCUuSkbwJpGlLbtsBd_lCvmvDp1Ucsv0rIvM" name="google-site-verification" /><!--[if lt IE 9]
+= javascript_include_tag 'html5'--><!--[endif]--><link href="//fonts.googleapis.com/css?family=Lato" media="screen" rel="stylesheet" type="text/css" /><link href="/assets/application-324a394d0cd0c2a8e0648cbd10ddeea9.css" media="screen" rel="stylesheet" type="text/css" /><script src="/assets/modernizr-fb6252ad3a82ba998d580ba913ffd94a.js" type="text/javascript"></script><script src="//cdn.ably.io/lib/ably.min.js" type="text/javascript"></script><script type="text/javascript">window.ablyKey = "scNMAQ.WPB3NQ:wcqqMD8xujGV8lHt"
+window.pjaxReady = function(cb){
+  if(window.App){
+    App.ready(cb);
+  }
+  else{
+    cb()
+  }
+}</script></head><body class="shared/errors/500_view loading  responsive dark-theme" id="application"><div id="app"><div class="twelve columns" id="shell"><div class="sidenav-nubbin"><i class="icon-moon-list "></i></div><nav id="sidenav"><ul class="top"><li class="nav-home"><a class="js-ignore-pjax" href="https://www.codewars.com/"><div class="logo-item-glyph-spin"><div class="spin"><b></b></div></div><span class="mts">Sign Up</span></a></li><li class="nav-catalog"><a href="/kata/latest"><i class="icon-moon-compare "></i><span>Kata</span></a></li><li class="nav-kumite"><a href="/kumite"><i class="icon-moon-forked "></i><span>Kumite</span></a></li><li class="nav-forum"><a href="/topics"><i class="icon-moon-forum "></i><span>Forum</span></a></li><li class="nav-docs"><a href="https://github.com/codewars/codewars.com/wiki" target="wiki" title="Wiki"><i class="icon-moon-document "></i><span>Wiki</span></a></li></ul><ul class="bottom"><li class="nav-leaders"><a href="/users/leaderboard" title="Leaders"><i class="icon-moon-trophy "></i><span>Leaders</span></a></li></ul></nav><header class="main is-visible" id="main_header"><ul class="items"><li><span><a href="/users/sign_in" class="js-ignore-pjax is-nudged-down-more">Log In</a></span></li><li><span><a href="/" class="js-ignore-pjax btn is-red">Sign Up</a></span></li></ul></header><main id="shell_content" role="main"><div class="is-hidden" id="global_alerts"><div class="alert-box"></div></div><div id="flash"></div><div class="twelve columns"><div class="row"><div class="panel text-center is-darkened pah"><h1>Looks like there was a server error! (500)</h1><div class="eight columns centered"><p>We have taken note of the situation and will be looking into it.</p><p>If you would like to supply us with some details as to how this happened please visit our <a href="https://github.com/Codewars/codewars.com/issues">Github issues list</a>.
+This will help us get things fixed faster.</p></div></div><div class="panel"><h2>No route matches api/v1/code-challenges/train</h2></div></div></div></main><div class="clear"></div></div><div class="clear"></div><footer id="main_footer"><ul class="link-list is-inline"><li class="copyRight is-gray-text">&copy; 2017 Codewars</li><li><a href="/about">About</a></li><li><a href="http://dev.codewars.com" target="API">API</a></li><li><a href="https://medium.com/@Codewars" target="Blog">Blog</a></li><li><a href="/about/privacy">Privacy</a></li><li><a href="/about/terms-of-service">Terms</a></li><li><a data-content="info@codewars.com" href="mailto:info@codewars.com" id="contactUs" rel="popover">Contact</a></li><li class="poweredby_link"><a class="has-tip tip-top is-nudged-down-next" href="http://www.qualified.io?utm_source=codewars&utm_medium=web&utm_term=footer" target="Qualified" title="Supercharge your technical hiring with developer assessments."><img alt="Poweredby_qualified" src="/assets/poweredby_qualified-34d1f986cf9ac647440422ec4e66a959.png" style="height: 16px" /></a></li></ul></footer><div class="modal hide" id="confirm_modal"><div class="modal-header"><div class="close" data-dismiss="modal"><i class="icon-moon-cross large"></i></div><h4>Confirm</h4><div class="clear"></div></div><div class="clear"></div><div class="modal-body view"></div><div class="modal-footer"><ul class="form-actions"><li class="cancel dark" data-dismiss="modal"><a class="btn">Cancel</a></li><li class="alt-confirm is-hidden"><a class="btn"></a></li><li class="confirm"><a class="btn is-green"><i class="icon-general-checkmark"></i>Confirm</a></li></ul></div></div><div class="is-hidden" id="templates"></div></div><script src="/assets/application-034dc7c5beb03f7c4d90564dd7dcf290.js" type="text/javascript"></script><script type="text/javascript">App.currentUser = {}
+if (window.App && App.currentUser && App.currentUser.hideAds) $('#_carbonad').hide()</script><script type="text/javascript">App.session = {"private_channel_name":"asTeEw","env":"production"}
+App.data = {"routes":{},"controllerName":"application"}
+App.routes = {}</script><script id="IntercomSettingsScriptTag">window.intercomSettings = {"app_id":"x27gw54w"}</script><script type="text/javascript">(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/x27gw54w';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script><script src="/assets/bundles/application-602de33efa64e5f4558afe57654cf0ca.js" type="text/javascript"></script><script type="text/javascript">
+//<![CDATA[
+App.setController('App.Controls.Application.Shared/errors/500Controller');
+//]]>
+</script><div class="is-hidden" id="template_helpers"><script id="hex_tmpl" type="template"><div data-bind-class="{{size||=small}}-hex {{class}}" data-bind-title="title"><span data-bind-text="label"></span></div></script><script id="border_hex_tmpl" type="template"><div data-bind-class="{{size||=small}}-hex {{class}}" data-bind-title="title"><div data-bind-class="inner-{{size||=small}}"><span data-bind-text="label"></span></div></div></script><script id="hidden_field" type="template"><input data-bind-id="@id" data-bind-name="@name" data-bind-value="@value" type="hidden" /></script><script id="input_field" type="template"><div data-bind-class="field_class"><label data-bind-class="%required && 'required'" data-bind-for="@id" data-bind-if="%label"><abbr data-bind-if="%required" title="required">* </abbr><span data-bind-html="%label"></span></label><div data-bind-class="field_value_class"><input data-bind-id="@id" data-bind-name="@name" data-bind-type="%type || 'text'" data-bind-value="@value | unescape_html || %defaultValue" /></div><include data-bind-each="@errors"><small data-bind-html="@"></small></include></div></script><script id="checkbox_field" type="template"><div class="boolean" data-bind-class="field_class"><div class="field_value"><div><input data-bind-name="@key" type="hidden" value="0" /><label class="checkbox"><input class="boolean" data-bind-checked="@value" data-bind-id="@id" data-bind-name="@name" type="checkbox" value="1" /><span data-bind-html="%label || @label"></span></label></div></div></div></script><script id="markdown_field" type="template"><div class="is-full-height" data-bind-class="field_class" data-bind-if="%style | eq::'full'"><div class="markdown-editor is-full-height mbn"><div class="tabs is-full-height"><dl class="tabs is-contained is-dimmed"><dd class="is-active has-tip tip-top" title="Edit your message using markdown"><a data-bind-html="{{%label}}" data-bind-if="%label" data-tab="markdown"></a><a data-bind-unless="%label" data-tab="markdown"><i class="icon-moon-edit "></i></a></dd><dd class="has-tip tip-right" title="Preview your comment"><a data-tab="preview"><i class="icon-moon-preview "></i></a></dd><dd class="has-tip tip-left" title="Edit in full-screen mode"><a class="js-expand"><i class="icon-moon-expand "></i></a></dd></dl><div class="clear"></div><ul class="tabs-content is-full-height"><li class="is-full-height is-active" data-tab="markdown"><div class="text-editor-container is-full-height"><textarea class="is-hidden" data-bind-id="@id" data-bind-name="@name" data-bind-value="@value"></textarea><div class="text-editor js-editor has-shadow"></div><div class="editor-msg-container is-hidden"><div class="alert-box"></div></div></div></li><li class="is-full-height" data-tab="preview"><div class="panel is-darkened is-overflow-auto"><div class="markdown"><p>Your rendered <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">github-flavored</a> markdown will appear here.</p></div></div></li></ul></div></div></div><div data-bind-class="field_class" data-bind-if="%style | ne::'full'"><label data-bind-class="%required && 'required'" data-bind-for="@id" data-bind-if="%label"><abbr data-bind-if="%required" title="required">* </abbr><span data-bind-html="%label"></span></label><div class="markdown-editor is-tall is-low-light" data-bind-class="%markdownEditorClass"><div class="tabs"><dl class="tabs is-contained"><dd class="is-active has-tip tip-top" title="Edit your message using markdown"><a data-tab="markdown"><i class="icon-moon-edit "></i></a></dd><dd class="has-tip tip-right" title="Preview your comment"><a data-tab="preview"><i class="icon-moon-preview "></i></a></dd><dd class="has-tip tip-right" title="Edit in full-screen mode"><a class="js-expand"><i class="icon-moon-expand "></i></a></dd></dl><ul class="tabs-content"><li class="is-full-height is-active" data-tab="markdown"><div class="text-editor-container is-full-height"><textarea class="is-hidden" data-bind-id="@id" data-bind-name="@name" data-bind-value="@value"></textarea><div class="text-editor js-editor has-shadow"></div><div class="editor-msg-container is-hidden"><div class="alert-box"></div></div></div></li><li class="is-full-height" data-tab="preview"><div class="panel is-darkened is-overflow-auto"><div class="markdown"><p>Your rendered <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">github-flavored</a> markdown will appear here.</p></div></div></li></ul></div></div></div></script><script id="code_editor_field" type="template"><div class="text-editor-container" data-bind-class="field_class" data-bind-id="{{@id}}_field"><label data-bind-class="%required && 'required'" data-bind-for="@id" data-bind-if="%label"><abbr data-bind-if="%required" title="required">* </abbr><span data-bind-html="%label"></span></label><textarea class="is-hidden" data-bind-id="@id" data-bind-name="@name" data-bind-value="@value"></textarea><div class="text-editor js-editor has-shadow"></div><div class="commands-container"><ul class="no-list-style"><li class="expand" title="Maximize Editor (esc key)"><a><i class="icon-moon-expand "></i></a></li><li class="shrink is-hidden" title="Shrink Editor (esc key)"><a><i class="icon-moon-collapse "></i></a></li></ul></div><div class="editor-msg-container is-hidden"><div class="alert-box"></div></div></div></script></div><div class="pam is-hidden js-keep" id="collection_modal"><view><script type="template"><h3>Kata: <span data-bind-html='@current.name'>kata</span>:</h3><div class="pls" data-bind-if="@loading"><p>Loading collection data...</p></div><div data-bind-unless="@loading"><div class="tabs" data-bind-unless="@adding"><dl class="tabs"><dd class="is-active"><a data-tab="personal"><i class="icon-moon-plus "></i>Add To My Collections</a></dd><dd data-bind-class="!@recent | hidden_class"><a data-tab="recent"><i class="icon-moon-collection "></i>Recently Collected In</a></dd></dl><ul class="tabs-content mbn"><li class="is-active" data-tab="personal"><div class="collection-content" data-bind-if="enough_honor?"><div class="collections" data-bind-if="@collections.length"><ul><li data-bind-data-value="@id" data-bind-each="@collections"><div><h4><i class="icon-moon-collection "></i><span data-bind-text="@name"></span></h4><div class="info-row"><span><i class="icon-moon-compare "></i><span data-bind-text="{{@code_challenges | count | string}} kata"></span></span><a data-bind-href="/collections/{{@id}}" target="collection"><i class="icon-moon-preview "></i>View</a></div></div><a class="btn is-dark is-red-text js-add-toggle" data-bind-if="added?">Remove</a><a class="btn is-dark is-green-text js-add-toggle" data-bind-unless="added?">Add</a></li></ul></div><div data-bind-unless="@collections.length"><h5>You have not created any collections yet.</h5><p>Collections are a way for you to organize kata so that you can
+create your own training routines. Every collection you create is public and
+automatically sharable with other warriors. After you have added a few kata to a
+collection you and others can train on the kata contained within the collection.</p><p>Get started now by <a class="js-add">creating a new collection</a>.</p></div></div><div class="collection-content pam" data-bind-unless="enough_honor?">You must wait until you have earned at least 20 honor before you can create new collections.</div></li></ul></div><form class="new-collection phs" data-bind-if="@adding"><p>Set the name for your new collection. Remember, this is going to be visible by everyone
+so think of something that others will understand.</p><input class="mtm" placeholder="New Collection Name" type="text" /></form><div class="collection-footer"><hr class="mbl" /><a class="btn is-green mrm js-create" data-bind-if="@adding">Create & Add</a><a class="btn js-done" data-bind-text="done_label"></a><a class="btn is-green is-right js-add" data-bind-unless="@adding || !enough_honor?">New Collection</a></div></div></script></view></div><script type="text/javascript">// Google
+(function (i, s, o, g, r, a, m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m= s.getElementsByTagName(o)[0]; a.async=1; a.src=g;m.parentNode.insertBefore(a, m)
+                  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-33566223-1', 'auto');
+ga('send', 'pageview');</script><script src="https://cdn.ravenjs.com/3.12.1/raven.min.js" type="text/javascript"></script><script type="text/javascript">Raven.config('https://dc778a04207f4100809dddc5f47d43fb@sentry.io/116947', {
+  environment: "production",
+  ignoreErrors: [
+    'top.GLOBALS',
+    "Can't execute code from a freed script",
+    "Не удается выполнить программу из освобожденного сценария",
+    "No se puede ejecutar código de un script liberado"
+  ],
+  ignoreUrls: [
+    /graph\.facebook\.com/i,
+    /connect\.facebook\.net\/en_US\/all\.js/i,
+    /extensions\//i,
+    /^chrome:\/\//i,
+    /intercomcdn/i,
+    /ravenjs/i,
+  ]
+}).install()</script><script type="text/javascript">// GoSquared
+!function (g, s, q, r, d) {r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+  arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+  d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+  insertBefore(d,q)}(window, document, 'script', '_gs');
+
+_gs('GSN-087086-V');</script></body></html>'):
+  app/controllers/kata_controller.rb:21:in `create'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (171.9ms)
+
+
+Started GET "/" for ::1 at 2017-12-16 12:47:57 -0800
+Processing by UsersController#signup as HTML
+  Rendered users/signup.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 132ms (Views: 131.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/game-plan" for ::1 at 2017-12-16 12:48:00 -0800
+Processing by KataController#game_plan as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+  Rendered kata/game_plan.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 144ms (Views: 141.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/coding-challenges" for ::1 at 2017-12-16 12:48:04 -0800
+Processing by KataController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  Rendered kata/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 188ms (Views: 186.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/NEED%20TO%20CREATE%20THIS%20PAGE" for ::1 at 2017-12-16 12:48:09 -0800
+
+ActionController::RoutingError (No route matches [GET] "/NEED%20TO%20CREATE%20THIS%20PAGE"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.8ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (165.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (110.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (240.1ms)
+
+
+Started GET "/NEED%20TO%20CREATE%20THIS%20PAGE" for ::1 at 2017-12-16 12:48:09 -0800
+
+ActionController::RoutingError (No route matches [GET] "/NEED%20TO%20CREATE%20THIS%20PAGE"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (159.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (103.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (241.3ms)
+
+
+Started DELETE "/logout" for ::1 at 2017-12-16 12:48:41 -0800
+Processing by UsersController#logout as HTML
+  Parameters: {"authenticity_token"=>"KgaD5/9cf0GlYRlUPAfeRolC9nUlHJtSYf5eaCFSYjKgwZ1NwrNBKfyitKGeSCT8E8FxZKaLz3Ohpzj+vCCqJw=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-12-16 12:48:41 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 201ms (Views: 200.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-12-16 12:48:51 -0800
+Processing by UsersController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ccvQ58/q3VxytqQwIPoegfwt81k8mtA9uYBtW6tx0rH7DM5N8gXjNCt1CcWCteQ7Zq50SL8NhBx52QvNNgMapA==", "username"=>"Ivchang", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["username", "Ivchang"]]
+Redirected to http://localhost:3000/game-plan
+Completed 302 Found in 105ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/game-plan" for ::1 at 2017-12-16 12:48:51 -0800
+Processing by KataController#game_plan as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  Rendered kata/game_plan.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 197ms (Views: 195.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/account-info" for ::1 at 2017-12-16 12:48:59 -0800
+
+ActionController::RoutingError (uninitialized constant UserController):
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:72:in `controller_reference'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:62:in `controller'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:41:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (156.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (104.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (241.7ms)
+
+
+Started GET "/account-info" for ::1 at 2017-12-16 12:49:00 -0800
+
+ActionController::RoutingError (uninitialized constant UserController):
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:72:in `controller_reference'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:62:in `controller'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:41:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (146.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (95.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (221.7ms)
+
+
+Started GET "/account-info" for ::1 at 2017-12-16 12:51:36 -0800
+
+ActionController::RoutingError (uninitialized constant UserController):
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:72:in `controller_reference'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:62:in `controller'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:41:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/hhz_plst/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (142.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (94.7ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/hhz_plst/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (210.5ms)
